@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Aditya's Memento | Portfolio</title>
+        <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
+
+        <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon" />
+
+        <link rel="stylesheet" href="./assets/css/styles.css"/>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+        <script type="text/javascript">
+            (function() {
+                // Initialize EmailJS with your public key
+                emailjs.init({
+                    publicKey: "QBDxSbkxH2nHn9XEu",
+                });
+            })();
+        </script>
+        <script type="text/javascript">
+            window.onload = function() {
+                const contactForm = document.getElementById('contactForm');
+                const submitBtn = document.getElementById('submitBtn');
+                const inputs = document.querySelectorAll('[data-form-input]');
+    
+                // Enable submit button when all inputs are filled
+                inputs.forEach(input => {
+                    input.addEventListener('input', () => {
+                        submitBtn.disabled = ![...inputs].every(input => input.value.trim() !== '');
+                    });
+                });
+    
+                contactForm.addEventListener('submit', function(event) {
+                    event.preventDefault();
+    
+                    const formData = {
+                        from_name: contactForm.fullname.value,
+                        from_email: contactForm.email.value,
+                        message: contactForm.message.value,
+                        to_name: "itsadityakr27.services@gmail.com"
+                    };
+    
+                    emailjs.send('service_6yl0vef', 'template_7apajic', formData)
+                        .then(() => {
+                            console.log('SUCCESS!');
+                            alert('Email sent successfully!');
+                            contactForm.reset();
+                            submitBtn.disabled = true;
+                        }, (error) => {
+                            console.log('FAILED...', error);
+                            alert('Failed to send email. Please try again later.');
+                        });
+                });
+            }
+        </script>
+    </head>
+
+    <body>
+        <main>
+            <aside class="sidebar" data-sidebar>
+                <div class="sidebar-info">
+                    <figure class="avatar-box">
+                        <img class="avatar-box-image" src="./assets/images/profile-photo.png" alt="Aditya's Profile Image" width="80" />
+                    </figure>
+                    <div class="info-content">
+                        <h1 class="name" title="Aditya Kumar">Aditya Kumar</h1>
+                        <p class="title">Web developer | DSA</p>
+                    </div>
+
+                    <button class="info_more-btn" data-sidebar-btn>
+                        <span>Show Contacts</span>
+
+                        <ion-icon name="chevron-down"></ion-icon>
+                    </button>
+                </div>
+
+                <div class="sidebar-info_more">
+                    <div class="separator"></div>
+
+                    <ul class="contacts-list">
+
+                        <li class="contact-item">
+                            <div class="icon-box">
+                                <a href="#" target="_blank" class="contact-link"><img class="contact-png" src="./assets/weather/icons8-cloud-cross-96.png" alt="Weather" /></a>
+                            </div>
+                        
+                            <div class="contact-info">
+                                <p class="contact-title">Weather</p>
+                        
+                                <a href="#" target="_blank" class="contact-link"><p class="title weather temp">0°C | Location Error</p> <p class="title weather location"></p></a>
+                            </div>
+                        </li>
+                        <li class="contact-item">
+                            <div class="icon-box">
+                                <a href="https://time.is/" target="_blank" class="contact-link"><img class="contact-png" src="./assets/icons/icons8-watch-96.png" alt="Date and Time" /></a>
+                            </div>
+
+                            <div class="contact-info">
+                                <p class="contact-title">Time</p>
+
+                                <a href="https://time.is/" target="_blank" class="contact-link"><p class="title time"></p></a>
+                            </div>
+                        </li>
+                        <li class="contact-item">
+                            <div class="icon-box">
+                                <a href="https://hi.wikipedia.org/wiki/%E0%A4%AD%E0%A4%BE%E0%A4%B0%E0%A4%A4" target="_blank" class="contact-link"><img class="contact-png" src="./assets/icons/icons8-india-national-emblem-96.png" alt="Jai Hind" /></a>
+                            </div>
+
+                            <div class="contact-info">
+                                <p class="contact-title">Nationality</p>
+
+                                <a href="https://hi.wikipedia.org/wiki/%E0%A4%AD%E0%A4%BE%E0%A4%B0%E0%A4%A4" target="_blank" class="contact-link">INDIAN CITIZEN</a>
+                            </div>
+                        </li>
+
+                        <li class="contact-item">
+                            <div class="icon-box">
+                                <a href="mailto:itsadityakr27.services@gmail.com" class="contact-link"><img class="contact-png" src="./assets/icons/icons8-gmail-96.png" alt="Email Logo" /></a>
+                            </div>
+
+                            <div class="contact-info">
+                                <p class="contact-title">Email</p>
+
+                                <a href="mailto:itsadityakr27.services@gmail.com" class="contact-link">itsadityakr27.services@gmail.com</a>
+                            </div>
+                        </li>
+
+                        <li class="contact-item">
+                            <div class="icon-box">
+                                
+                                <a href="https://www.pdfgear.com/birthday-cards/img/happy-birthday-to-me-1.png" target="_blank"><img class="contact-png" src="./assets/icons/icons8-birthday-96.png" alt="Birthday Logo" /></a>
+                            </div>
+
+                            <div class="contact-info">
+                                <p class="contact-title">Birthday</p>
+
+                                <a href="https://www.pdfgear.com/birthday-cards/img/happy-birthday-to-me-1.png" target="_blank"><time datetime="1982-06-23">November 27, 2001</time></a>
+                            </div>
+                        </li>
+
+                        <li class="contact-item">
+                            <div class="icon-box">
+                                <a href="https://maps.app.goo.gl/YDMZV9eeWTgvgzEn9" target="_blank"><img class="contact-png" src="./assets/icons/icons8-google-maps-96.png" alt="Maps Logo" /></a>
+                                
+                            </div>
+
+                            <div class="contact-info">
+                                <p class="contact-title">Places</p>
+
+                                <a href="https://maps.app.goo.gl/YDMZV9eeWTgvgzEn9" target="_blank"><address>Delhi, Noida, Lucknow</address></a>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="separator"></div>
+
+                    <ul class="social-list">
+                        <li class="social-item">
+                            <a href="#" class="social-link" target="_blank">
+                                <img class="social-item-png" src="./assets/social-icons/icons8-facebook-120.png " alt="" />
+                            </a>
+                        </li>
+
+                        <li class="social-item">
+                            <a href="https://www.instagram.com/thenameisadityakr/" class="social-link" target="_blank">
+                                <img class="social-item-png" src="./assets/social-icons/icons8-instagram-120.png" alt="" />
+                            </a>
+                        </li>
+
+                        <li class="social-item">
+                            <a href="https://www.linkedin.com/in/itsadityakr/" class="social-link" target="_blank">
+                                <img class="social-item-png" src="./assets/social-icons/icons8-linkedin-120.png" alt="" />
+                            </a>
+                        </li>
+
+                        <li class="social-item">
+                            <a href="https://x.com/me_adityakr" class="social-link" target="_blank">
+                                <img class="social-item-png" src="./assets/social-icons/icons8-x-120.png" alt="" />
+                            </a>
+                        </li>
+
+                        <li class="social-item">
+                            <a href="https://linktr.ee/itsadityakr27" class="social-link" target="_blank">
+                                <img class="social-item-png" src="./assets/social-icons/icons8-linktree-120.png" alt="" />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+
+            <div class="main-content">
+                <nav class="navbar">
+                    <ul class="navbar-list">
+                        <li class="navbar-item">
+                            <button class="navbar-link active" data-nav-link>About</button>
+                        </li>
+                        <li class="navbar-item">
+                            <button class="navbar-link" data-nav-link>Resume</button>
+                        </li>
+                        <li class="navbar-item">
+                            <button class="navbar-link" data-nav-link>Projects</button>
+                        </li>
+                        <li class="navbar-item">
+                            <button class="navbar-link" data-nav-link>Snapshots</button>
+                        </li>
+                        <li class="navbar-item">
+                            <button class="navbar-link" data-nav-link>Contact</button>
+                        </li>
+                        <li class="navbar-item">
+                            <button class="theme-link theme-toggle">
+                                <img id="theme-icon" width="20px" src="./assets/icons/dark.png" alt="Theme Switcher">
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+                
+
+                <article class="about active" data-page="about">
+                    <header>
+                        <h2 class="h2 article-title">About me</h2>
+                    </header>
+
+                    <section class="about-text">
+                        <p>
+                            I am Aditya Kumar, a tech enthusiast from Lucknow with a passion for software development and engineering. Currently pursuing a B.Tech in Computer Science Engineering at Galgotias University, I have a strong
+                            academic background and hands-on experience in programming, web development, and AI. My projects, such as River GPT Evolved and RFID Secure Door, demonstrate my ability to integrate cutting-edge technologies.
+                        </p>
+
+                        <p>
+                            I am proficient in C++, Java, and JavaScript, and skilled in using tools like Git and platforms like Visual Studio Code. Beyond tech, I excel in leadership, event management, and public speaking.
+                        </p>
+                    </section>
+
+                    <section class="service">
+                        <h3 class="h3 service-title">What are my Interests</h3>
+
+                        <ul class="service-list">
+                            <li class="service-item">
+                                <div class="service-icon-box">
+                                    <img class="contact-png" src="./assets/icons/icons8-code-96.png" alt="DSA Logo" width="40px" />
+                                </div>
+
+                                <div class="service-content-box">
+                                    <h4 class="h4 service-item-title">Data Structures</h4>
+
+                                    <p class="service-item-text">
+                                        I am at an intermediate level in data structures and algorithms (DSA) with C++.
+                                    </p>
+                                </div>
+                            </li>
+
+                            <li class="service-item">
+                                <div class="service-icon-box">
+                                    <img class="contact-png" src="./assets/icons/icons8-web-96.png" alt="WebD Logo" width="40px" />
+                                </div>
+
+                                <div class="service-content-box">
+                                    <h4 class="h4 service-item-title">Web development</h4>
+
+                                    <p class="service-item-text">
+                                        High-quality development of websites at an intermediate level, and expertise in frontend development.
+                                    </p>
+                                </div>
+                            </li>
+
+                            <li class="service-item">
+                                <div class="service-icon-box">
+                                    <img src="./assets/icons/icons8-photo-96.png" alt="Camera Logo" width="40" />
+                                </div>
+
+                                <div class="service-content-box">
+                                    <h4 class="h4 service-item-title">Photography</h4>
+
+                                    <p class="service-item-text">
+                                        I pursue photography purely out of interest, focusing exclusively on nature and animals.
+                                    </p>
+                                </div>
+                            </li>
+
+                            <li class="service-item">
+                                <div class="service-icon-box">
+                                    <img src="./assets/icons/icons8-games-96.png" alt="Games Logo" width="40" />
+                                </div>
+
+                                <div class="service-content-box">
+                                    <h4 class="h4 service-item-title">Games</h4>
+
+                                    <p class="service-item-text">
+                                        In my free time, I enjoy playing online multiplayer FPS and open-world racing games.
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section class="testimonials">
+                        <h3 class="h3 testimonials-title">Certifications</h3>
+
+                        <ul class="testimonials-list has-scrollbar">
+                            <li class="testimonials-item">
+                                <div class="content-card" data-testimonials-item>
+                                    <figure class="testimonials-avatar-box">
+                                        <img src="./assets/icons/icons8-1-96.png" alt="Counter Image" width="30" data-testimonials-avatar />
+                                    </figure>
+
+                                    <h4 class="h4 testimonials-item-title" data-testimonials-title>2024 Web Development Bootcamp by Udemy.</h4>
+
+                                    <div class="testimonials-text" data-testimonials-text>
+                                        <p>
+                                            In the 2024 Web Development Bootcamp by Udemy, I gained a thorough understanding of both frontend and backend development. I learned to build dynamic web applications using React, manage version
+                                            control with Git and GitHub, and integrate frontend and backend technologies for seamless user experiences. This training equipped me with a well-rounded skill set to tackle modern web development
+                                            projects.
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="testimonials-item">
+                                <div class="content-card" data-testimonials-item>
+                                    <figure class="testimonials-avatar-box">
+                                        <img src="./assets/icons/icons8-2-96.png" alt="Counter Image" width="30" data-testimonials-avatar />
+                                    </figure>
+
+                                    <h4 class="h4 testimonials-item-title" data-testimonials-title>2024 GeeksforGeeks Training Certificate.</h4>
+
+                                    <div class="testimonials-text" data-testimonials-text>
+                                        <p>
+                                            In the 2024 GeeksforGeeks Training, I advanced my C++ skills by mastering key data structures and algorithms. I implemented and optimized stacks, queues, and linked lists for efficient data
+                                            management, and explored trees and graphs for hierarchical and networked data representation. This comprehensive training enhanced my problem-solving abilities, algorithmic strategies, and code
+                                            efficiency in C++.
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="testimonials-item">
+                                <div class="content-card" data-testimonials-item>
+                                    <figure class="testimonials-avatar-box">
+                                        <img src="./assets/icons/icons8-3-96.png" alt="Counter Image" width="30" data-testimonials-avatar />
+                                    </figure>
+
+                                    <h4 class="h4 testimonials-item-title" data-testimonials-title>2023 JAVA Assessment Test by Hacker Rank.</h4>
+
+                                    <div class="testimonials-text" data-testimonials-text>
+                                        <p>
+                                            In the 2023 Java Assessment Test by HackerRank, I demonstrated my proficiency in Java, focusing on syntax and fundamental programming concepts. This assessment enhanced my Java skills and earned
+                                            me a certification, validating my competence in core Java programming.
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="testimonials-item">
+                                <div class="content-card" data-testimonials-item>
+                                    <figure class="testimonials-avatar-box">
+                                        <img src="./assets/icons/icons8-4-96.png" alt="Counter Image" width="30" data-testimonials-avatar />
+                                    </figure>
+
+                                    <h4 class="h4 testimonials-item-title" data-testimonials-title>AI-ML Google Virtual Internship by AICTE.</h4>
+
+                                    <div class="testimonials-text" data-testimonials-text>
+                                        <p>
+                                            During the AI-ML Google Virtual Internship by AICTE, I acquired foundational knowledge in artificial intelligence and machine learning. The internship provided insights into key concepts,
+                                            algorithms, and applications, laying the groundwork for further exploration and development in AI and ML technologies.
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <div class="modal-container" data-modal-container>
+                        <div class="overlay" data-overlay></div>
+
+                        <section class="testimonials-modal">
+                            <button class="modal-close-btn" data-modal-close-btn>
+                                <ion-icon name="close-outline"></ion-icon>
+                            </button>
+
+                            <div class="modal-img-wrapper">
+                                <figure class="modal-avatar-box">
+                                    <img src="./assets/images/avatar-1.png" alt="" width="80" data-modal-img />
+                                </figure>
+
+                                <img src="./assets/images/icon-quote.svg" alt="quote icon" />
+                            </div>
+
+                            <div class="modal-content">
+                                <h4 class="h3 modal-title" data-modal-title></h4>
+
+                                <div data-modal-text>
+                                    <p>
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <section class="clients sec-clients">
+                        <h3 class="h3 clients-title">Skills and Tools</h3>
+
+                        <ul class="clients-list has-scrollbar">
+                            <li class="clients-item">
+                                <a class="tools-a-tag" target="_blank" href="https://www.w3schools.com/c/index.php">
+                                    <img src="./assets/tools/icons8-c-120 (1).png" alt="Tools logo" />
+                                    C Programming
+                                </a>
+                            </li>
+
+                            <li class="clients-item">
+                                <a class="tools-a-tag" target="_blank" href="https://cplusplus.com/doc/tutorial/">
+                                    <img src="./assets/tools/icons8-c-120.png" alt="Tools logo" />
+                                    C++ Programming
+                                </a>
+                            </li>
+                            <li class="clients-item">
+                                <a class="tools-a-tag" target="_blank" href="https://www.w3schools.com/java/">
+                                    <img src="./assets/tools/icons8-java-120.png" alt="Tools logo" />
+                                    JAVA - jdk v22.0.2
+                                </a>
+                            </li>
+                            <li class="clients-item">
+                                <a class="tools-a-tag" target="_blank" href="https://docs.python.org/3/tutorial/">
+                                    <img src="./assets/tools/icons8-python-120.png" alt="Tools logo" />
+                                    Python - 3.12.3
+                                </a>
+                            </li>
+                            <li class="clients-item">
+                                <a class="tools-a-tag" target="_blank" href="https://html.com/">
+                                    <img src="./assets/tools/icons8-html-120.png" alt="Tools logo" />
+                                    HTML - 5
+                                </a>
+                            </li>
+                            <li class="clients-item">
+                                <a class="tools-a-tag" target="_blank" href="https://web.dev/learn/css">
+                                    <img src="./assets/tools/icons8-css-120.png" alt="Tools logo" />
+                                    CSS - Cascading Style Sheets
+                                </a>
+                            </li>
+                            <li class="clients-item">
+                                <a class="tools-a-tag" target="_blank" href="https://www.javascript.com/">
+                                    <img src="./assets/tools/icons8-javascript-120.png" alt="Tools logo" />
+                                    Js - JavaScript
+                                </a>
+                            </li>
+                            <li class="clients-item">
+                                <a class="tools-a-tag" target="_blank" href="https://www.youtube.com/playlist?list=PLbtI3_MArDOlJ4036mWiUKaQToUS8MZVu">
+                                    <img src="./assets/tools/icons8-git-120.png" alt="Tools logo" />
+                                    GIT -  Version Control System
+                                </a>
+                            </li>
+                            <li class="clients-item">
+                                <a class="tools-a-tag" target="_blank" href="https://www.youtube.com/playlist?list=PLbtI3_MArDOlJ4036mWiUKaQToUS8MZVu">
+                                    <img src="./assets/tools/icons8-github-120.png" alt="Tools logo" />
+                                    GitHub
+                                </a>
+                            </li>
+                            <li class="clients-item">
+                                <a class="tools-a-tag" target="_blank" href="https://www.youtube.com/watch?v=nWIRJBCjls8">
+                                    <img src="./assets/tools/icons8-vs-code-120.png" alt="Tools logo" />
+                                    VS Code - Visual Studio Code v1.91
+                                </a>
+                            </li>
+                            <li class="clients-item">
+                                <a class="tools-a-tag" target="_blank" href="https://www.youtube.com/playlist?list=PLhW3qG5bs-L94pyVnP6YysYQ0_PfvqTQ3">
+                                    <img src="./assets/tools/icons8-intellij-idea-120.png" alt="Tools logo" />
+                                    IntelliJ IDEA - Java
+                                </a>
+                            </li>
+                            <li class="clients-item">
+                                <a class="tools-a-tag" target="_blank" href="https://www.youtube.com/watch?v=HHcZbXsZtm0">
+                                    <img src="./assets/tools/icons8-pycharm-120.png" alt="Tools logo" />
+                                    PyCharm - The Python IDE
+                                </a>
+                            </li>
+                            <li class="clients-item">
+                                <a class="tools-a-tag" target="_blank" href="https://www.youtube.com/watch?v=mlIUKyZIUUU&t=99s">
+                                    <img src="./assets/tools/icons8-web-error-96.png" alt="Tools logo" />
+                                    Object Oriented Programming
+                                </a>
+                            </li>
+                            <li class="clients-item">
+                                <a class="tools-a-tag" target="_blank" href="https://www.youtube.com/watch?v=ySKjhmg9RRo">
+                                    <img src="./assets/tools/icons8-office-365-120.png" alt="Tools logo" />
+                                    Microsoft Office 365 Tools
+                                </a>
+                            </li>
+                            <li class="clients-item">
+                                <a class="tools-a-tag" target="_blank" href="https://www.youtube.com/watch?v=Vnizm2k5KA8">
+                                    <img src="./assets/tools/icons8-windows-11-120.png" alt="Tools logo" />
+                                    Windows 11 - Build 22631
+                                </a>
+                            </li>
+                        </ul>
+                    </section>
+                </article>
+
+                <article class="resume" data-page="resume">
+                    <header>
+                        <h2 class="h2 article-title">Resume</h2>
+                    </header>
+
+                    <section class="timeline">
+                        <div class="title-wrapper">
+                            <div class="icon-box">
+                                <ion-icon name="book-outline"></ion-icon>
+                            </div>
+
+                            <h3 class="h3">Education</h3>
+                        </div>
+
+                        <ol class="timeline-list">
+                            <li class="timeline-item">
+                                <h4 class="h4 timeline-item-title">Galgotias University, Uttar Pradesh</h4>
+
+                                <span>2022 - 2025</span>
+
+                                <p class="timeline-text">
+                                    Currently a final-year student at Galgotias University in Gautam Buddh Nagar, Uttar Pradesh, pursuing a B.Tech in Computer Science and Engineering. Coursework includes Operating Systems, Data Structures, Analysis of Algorithms, Artificial Intelligence, Computer Architecture, Databases, Theory of Computations, Compiler Design, and Internet of Things, with a CGPA of over 9.0.
+                                </p>
+                            </li>
+
+                            <li class="timeline-item">
+                                <h4 class="h4 timeline-item-title">GITM, Lucknow</h4>
+
+                                <span>2019 - 2022</span>
+
+                                <p class="timeline-text">
+                                    Completed a diploma in Civil Engineering from the Uttar Pradesh Board of Technical Education, studying full-time at Goel Institute of Technology and Management in Lucknow, Uttar Pradesh, from 2019 to 2022.
+                                </p>
+                            </li>
+                            <li class="timeline-item">
+                                <h4 class="h4 timeline-item-title">Central Academy, Lucknow</h4>
+
+                                <span>2018 - 2019</span>
+
+                                <p class="timeline-text">
+                                    Completed 12th grade from the CBSE board in Lucknow, Uttar Pradesh, with a focus on Physics, Chemistry, and Mathematics (PCM) in 2019.
+                                </p>
+                            </li>
+                            <li class="timeline-item">
+                                <h4 class="h4 timeline-item-title">Central Academy, Lucknow</h4>
+
+                                <span>2016 - 2017</span>
+
+                                <p class="timeline-text">
+                                    Completed high schooling in 2017 from the CBSE board in Lucknow, Uttar Pradesh, with a focus on science, math, and computers.
+                                </p>
+                            </li>
+                        </ol>
+                    </section>
+
+                    <section class="timeline">
+                        <div class="title-wrapper">
+                            <div class="icon-box">
+                                <ion-icon name="book-outline"></ion-icon>
+                            </div>
+
+                            <h3 class="h3">Subjects</h3>
+                        </div>
+
+                        <ol class="timeline-list">
+                            <li class="timeline-item">
+                                <h4 class="h4 timeline-item-title">Data Structures</h4>
+
+                                <span>Level - Intermediate</span>
+
+                                <p class="timeline-text">
+                                    Understanding of various data organization methods like arrays, linked lists, stacks, and queues for efficient data management and manipulation.
+                                </p>
+                            </li>
+
+                            <li class="timeline-item">
+                                <h4 class="h4 timeline-item-title">Operating Systems</h4>
+
+                                <span>Level - Intermediate</span>
+
+                                <p class="timeline-text">
+                                    Study of how operating systems manage hardware resources and provide services for application software.
+                                </p>
+                            </li>
+
+                            <li class="timeline-item">
+                                <h4 class="h4 timeline-item-title">Analysis of Algorithms</h4>
+
+                                <span>Level - Intermediate</span>
+
+                                <p class="timeline-text">
+                                    Evaluation of algorithm efficiency and complexity to optimize performance and resource usage.
+                                </p>
+                            </li>
+                            <li class="timeline-item">
+                                <h4 class="h4 timeline-item-title">Artificial Intelligence</h4>
+
+                                <span>Level - Basic</span>
+
+                                <p class="timeline-text">
+                                    Introduction to AI concepts, including machine learning, neural networks, and problem-solving techniques.
+                                </p>
+                            </li>
+                            <li class="timeline-item">
+                                <h4 class="h4 timeline-item-title">Computer Architecture</h4>
+
+                                <span>Level - Intermediate</span>
+
+                                <p class="timeline-text">
+                                    Exploration of computer system design, including CPU, memory hierarchy, and hardware components.
+                                </p>
+                            </li>
+                            <li class="timeline-item">
+                                <h4 class="h4 timeline-item-title">Databases</h4>
+
+                                <span>Level - Intermediate</span>
+
+                                <p class="timeline-text">
+                                    Advanced study of database systems, including SQL, normalization, indexing, and transaction management.
+                                </p>
+                            </li>
+                            <li class="timeline-item">
+                                <h4 class="h4 timeline-item-title">Theory of Computations</h4>
+
+                                <span>Level - Advanced</span>
+
+                                <p class="timeline-text">
+                                    In-depth examination of computational theory, including automata, formal languages, and complexity classes.
+                                </p>
+                            </li>
+                            <li class="timeline-item">
+                                <h4 class="h4 timeline-item-title">Compiler Design</h4>
+
+                                <span>Level - Advanced</span>
+
+                                <p class="timeline-text">
+                                    Comprehensive understanding of compiler construction, including lexical analysis, parsing, optimization, and code generation.
+                                </p>
+                            </li>
+                            <li class="timeline-item">
+                                <h4 class="h4 timeline-item-title">Internet of Things </h4>
+
+                                <span>Level - Basic</span>
+
+                                <p class="timeline-text">
+                                    Fundamentals of IoT, focusing on device connectivity, data collection, and network communication.
+                                </p>
+                            </li>
+                            <li class="timeline-item">
+                                <h4 class="h4 timeline-item-title">Digital Marketing</h4>
+
+                                <span>Level - Advanced</span>
+
+                                <p class="timeline-text">
+                                    Advanced strategies and techniques in digital marketing, including SEO, content marketing, and data analytics
+                                </p>
+                            </li>
+                        </ol>
+                    </section>
+
+                    <section class="skill">
+                        <h3 class="h3 skills-title">My skills</h3>
+
+                        <ul class="skills-list content-card">
+                            <li class="skills-item">
+                                <div class="title-wrapper">
+                                    <h5 class="h5">Web Development</h5>
+                                    <data value="65">65%</data>
+                                </div>
+
+                                <div class="skill-progress-bg">
+                                    <div class="skill-progress-fill" style="width: 80%;"></div>
+                                </div>
+                            </li>
+
+                            <li class="skills-item">
+                                <div class="title-wrapper">
+                                    <h5 class="h5">Data Structures and Algorithms</h5>
+                                    <data value="55">55%</data>
+                                </div>
+
+                                <div class="skill-progress-bg">
+                                    <div class="skill-progress-fill" style="width: 70%;"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+                </article>
+
+                <article class="projects" data-page="projects">
+                    <header>
+                        <h2 class="h2 article-title">Projects</h2>
+                    </header>
+
+                    <section class="projects">
+                        
+
+                        <div class="filter-select-box">
+                            <button class="filter-select" data-select>
+                                <div class="select-value" data-select-value>Select category</div>
+
+                                <div class="select-icon">
+                                    <ion-icon name="chevron-down"></ion-icon>
+                                </div>
+                            </button>
+
+                            <ul class="select-list">
+                                
+
+                                <li class="select-item">
+                                    <button data-select-item>Web Development</button>
+                                </li>
+
+                                <li class="select-item">
+                                    <button data-select-item>Artificial Intelligence</button>
+                                </li>
+
+                                <li class="select-item">
+                                    <button data-select-item>Internet of Things</button>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <ul class="project-list">
+                            <li class="project-item active" data-filter-item data-category="web development">
+                                <a href="https://github.com/itsadityakr/Nostalgia-Music-Player" target="_blank">
+                                    <figure class="project-img">
+                                        <div class="project-item-icon-box">
+                                            <ion-icon name="eye-outline"></ion-icon>
+                                        </div>
+
+                                        <img src="./assets/images/project-1.png" alt="image" loading="lazy" />
+                                    </figure>
+
+                                    <h3 class="project-title">Nostalgia Music Player</h3>
+
+                                    <p class="project-category">Web development</p>
+                                    <h4 class="project-title-h4 project-title">HTML, CSS, Js</h4>
+                                </a>
+                            </li>
+
+                            <li class="project-item active" data-filter-item data-category="web development">
+                                <a href="https://github.com/itsadityakr/Todo-List" target="_blank">
+                                    <figure class="project-img">
+                                        <div class="project-item-icon-box">
+                                            <ion-icon name="eye-outline"></ion-icon>
+                                        </div>
+
+                                        <img src="./assets/images/project-2.png" alt="image" loading="lazy" />
+                                    </figure>
+
+                                    <h3 class="project-title">Todo List</h3>
+
+                                    <p class="project-category">Web development</p>
+                                    <h4 class="project-title-h4 project-title">HTML, CSS, Js</h4>
+                                </a>
+                            </li>
+
+                            <li class="project-item active" data-filter-item data-category="artificial intelligence">
+                                <a href="https://github.com/itsadityakr/Genie-AI-Connect" target="_blank">
+                                    <figure class="project-img">
+                                        <div class="project-item-icon-box">
+                                            <ion-icon name="eye-outline"></ion-icon>
+                                        </div>
+
+                                        <img src="./assets/images/project-3.png" alt="image" loading="lazy" />
+                                    </figure>
+
+                                    <h3 class="project-title">Genie AI Connect</h3>
+
+                                    <p class="project-category">AI and Web Development</p>
+                                    <h4 class="project-title-h4 project-title">Flask, MongoDB, Python, HTML, CSS, Js, Tailwind, OpenAI, MongoCluster</h4>
+                                </a>
+                            </li>
+
+                            <li class="project-item active" data-filter-item data-category="applications">
+                                <a href="https://github.com/itsadityakr/RFID-Secure-Door" target="_blank">
+                                    <figure class="project-img">
+                                        <div class="project-item-icon-box">
+                                            <ion-icon name="eye-outline"></ion-icon>
+                                        </div>
+
+                                        <img src="./assets/images/project-4.png" alt="image" loading="lazy" />
+                                    </figure>
+
+                                    <h3 class="project-title">RFID - Secure Door</h3>
+
+                                    <p class="project-category">Internet of Things</p>
+                                    <h4 class="project-title-h4 project-title">Arduino UNO Rev3, RFID Sensor, Pizo Buzzer, SG90 Servo Motor</h4>
+                                </a>
+                            </li>
+
+                            <li class="project-item active" data-filter-item data-category="artificial intelligence">
+                                <a href="https://github.com/itsadityakr/Query-Master-Chat-Bot" target="_blank">
+                                    <figure class="project-img">
+                                        <div class="project-item-icon-box">
+                                            <ion-icon name="eye-outline"></ion-icon>
+                                        </div>
+
+                                        <img src="./assets/images/project-5.png" alt="image" loading="lazy" height="100" />
+                                    </figure>
+
+                                    <h3 class="project-title">Query Master - Chat Bot</h3>
+
+                                    <p class="project-category">Artificial Intelligence</p>
+                                    <h4 class="project-title-h4 project-title">Python, OpenAI</h4>
+                                </a>
+                            </li>
+                        </ul>
+                    </section>
+                </article>
+
+                <article class="snapshots" data-page="snapshots">
+                    <header>
+                        <h2 class="h2 article-title">Snapshots</h2>
+                    </header>
+
+                    <section class="blog-posts">
+                        <ul class="blog-posts-list">
+                            <li class="blog-post-item" id="1">
+                                <a href="./assets/gallery/gallery (1).html" target="_blank">
+                                    <figure class="blog-banner-box">
+                                        <img src="./assets/images/blog-1.jpg" alt="snapshot6" loading="lazy" />
+                                    </figure>
+
+                                    <div class="blog-content">
+                                        <h3 class="h3 blog-item-title">College Tea and Rain</h3>
+                                        <div class="blog-meta">
+                                            <time datetime="2022-02-23">July 2024</time>
+                                        </div>
+
+                                        <p class="blog-text">
+                                            One day in college, my batchmates and I were drinking tea near the cafeteria when it suddenly started raining. We all rushed to a small shelter, laughing and panicking. Sometimes, weather like that can be so enjoyable.
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li class="blog-post-item" id="2">
+                                <a href="./assets/gallery/gallery (2).html" target="_blank">
+                                    <figure class="blog-banner-box">
+                                        <img src="./assets/images/blog-2.jpg" alt="snapshot5" loading="lazy" />
+                                    </figure>
+
+                                    <div class="blog-content">
+                                        <h3 class="h3 blog-item-title">First Day of Monsoon</h3>
+                                        <div class="blog-meta">
+                                            <time datetime="2022-02-23">May 2024</time>
+                                        </div>
+
+                                        <p class="blog-text">
+                                            That day, sitting near the driver’s seat at the front of an auto, I was thrilled as the rain started. It felt so refreshing after such a long time, knowing I wouldn’t have to deal with the hot weather for few days.
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li class="blog-post-item" id="3">
+                                <a href="./assets/gallery/gallery (3).html" target="_blank">
+                                    <figure class="blog-banner-box">
+                                        <img src="./assets/images/blog-3.jpg" alt="snapshot4" loading="lazy" />
+                                    </figure>
+
+                                    <div class="blog-content">
+                                        <h3 class="h3 blog-item-title">Life’s Varied Paths</h3>
+                                        <div class="blog-meta">
+                                            <time datetime="2022-02-23">June 2024</time>
+                                        </div>
+
+                                        <p class="blog-text">
+                                            That day, as I dropped a relative off at Charbhag Railway Station, I saw people rushing for general compartments and others sleeping on the platform, it reminded me that life is different for everyone.
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                            
+                            <li class="blog-post-item" id="4">
+                                <a href="./assets/gallery/gallery (4).html" target="_blank">
+                                    <figure class="blog-banner-box">
+                                        <img src="./assets/images/blog-4.jpg" alt="snapshot1" loading="lazy" />
+                                    </figure>
+
+                                    <div class="blog-content">
+                                        <h3 class="h3 blog-item-title">Magical Reflections</h3>
+                                        <div class="blog-meta">
+                                            <time datetime="2022-02-23">May 2024</time>
+                                        </div>
+
+                                        <p class="blog-text">
+                                            When I visited Nainital and saw Naini Lake, I was completely taken in by the beauty of nature. The calm water and the surrounding hills made the scene look magical.
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li class="blog-post-item" id="5">
+                                <a href="./assets/gallery/gallery (5).html" target="_blank">
+                                    <figure class="blog-banner-box">
+                                        <img src="./assets/images/blog-5.jpg" alt="snapshot7" loading="lazy" />
+                                    </figure>
+
+                                    <div class="blog-content">
+                                        <h3 class="h3 blog-item-title">Capturing a Pause</h3>
+                                        <div class="blog-meta">
+                                            <time datetime="2022-02-23">July 2024</time>
+                                        </div>
+
+                                        <p class="blog-text">
+                                            The day I took my friend's bike for a ride and stopped near a tree while waiting for my friend to buy some groceries, I took this shot. Riding after so long felt great and thrilled.
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="blog-post-item" id="6">
+                                <a href="./assets/gallery/gallery (6).html" target="_blank">
+                                    <figure class="blog-banner-box">
+                                        <img src="./assets/images/blog-6.jpg" alt="snapshot8" loading="lazy" />
+                                    </figure>
+
+                                    <div class="blog-content">
+                                        <h3 class="h3 blog-item-title">A Moment of Devotion</h3>
+                                        <div class="blog-meta">
+                                            <time datetime="2022-02-23">March 2024</time>
+                                        </div>
+
+                                        <p class="blog-text">
+                                            Visiting Shri Nageshwar Nath Mandir in Ayodhya, the rush and push of people were intense, but the devotion was palpable. Once inside the temple, it felt like stepping into heaven.
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="blog-post-item" id="7">
+                                <a href="./assets/gallery/gallery (7).html" target="_blank">
+                                    <figure class="blog-banner-box">
+                                        <img src="./assets/images/blog-7.jpg" alt="snapshot2" loading="lazy" />
+                                    </figure>
+
+                                    <div class="blog-content">
+                                        <h3 class="h3 blog-item-title">A Journey to Tranquility</h3>
+                                        <div class="blog-meta">
+                                            <time datetime="2022-02-23">April 2023</time>
+                                        </div>
+
+                                        <p class="blog-text">
+                                            Exploring Prem Mandir in Vrindavan was a delightful experience. I felt so peaceful and energized at Prem Mandir that all my day's tiredness melted away in the evening.
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                            
+                            <li class="blog-post-item" id="8">
+                                <a href="./assets/gallery/gallery (8).html" target="_blank">
+                                    <figure class="blog-banner-box">
+                                        <img src="./assets/images/blog-8.jpg" alt="snapshot2" loading="lazy" />
+                                    </figure>
+
+                                    <div class="blog-content">
+                                        <h3 class="h3 blog-item-title">Aarti at Har Ki Pauri</h3>
+                                        <div class="blog-meta">
+                                            <time datetime="2022-02-23">October 2021</time>
+                                        </div>
+
+                                        <p class="blog-text">
+                                            The evening Ganga Aarti at Har Ki Pauri in Haridwar was amazing. The river lit up with lamps and the prayers created a calm and beautiful scene.
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </section>
+                </article>
+
+                <article class="contact" data-page="contact">
+                    <header>
+                        <h2 class="h2 article-title">Contact</h2>
+                    </header>
+
+                    <section class="mapbox" data-mapbox>
+                        <figure>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6585660.5089520095!2d75.56423102915275!3d27.048675611804093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39994e9f7b4a09d3%3A0xf6a5476d3617249d!2sUttar%20Pradesh!5e1!3m2!1sen!2sin!4v1722111383563!5m2!1sen!2sin" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </figure>
+                    </section>
+
+                    <section class="contact-form">
+                        <h3 class="h3 form-title">Contact Form</h3>
+                    
+                        <form id="contactForm" class="form" data-form>
+                            <div class="input-wrapper">
+                                <input type="text" name="fullname" id="fullname" class="form-input" placeholder="Full name" required data-form-input />
+                                <input type="email" name="email" id="email" class="form-input" placeholder="Email address" required data-form-input />
+                            </div>
+                    
+                            <textarea name="message" id="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+                    
+                            <button id="submitBtn" class="form-btn" type="submit" disabled data-form-btn>
+                                <ion-icon name="paper-plane"></ion-icon>
+                                <span>Send Message</span>
+                            </button>
+                        </form>
+                    </section>
+                            
+                    
+                    
+                </article>
+            </div>
+        </main>
+
+        <script src="./assets/js/script.js"></script>
+        <script src="./assets/js/time.js"></script>
+        <script src="./assets/js/theme.js"></script>
+        <script src="./assets/js/disabler.js"></script>
+        <script src="./assets/js/weather.js"></script>
+
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    </body>
+</html>
