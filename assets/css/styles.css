@@ -1,23 +1,10 @@
 :root {
-  --bg-onyx: #525252;
-  --bg-jet: #30302e;
-  --bg-yellow-1: #ffd000;
-  --bg-yellow-2: #f5d753;
-  --border-onyx: #525252;
-  --text-yellow: #ffbb5c;
-  --jet:#383838;
-  --onyx:#2b2b2c;
-  --eerie-black-1: #202022;
-  --eerie-black-2: #1e1e1f;
-  --smoky-black: #121212;
-  --white-1: #d10d0d;
-  --white-2: #fafafa;
-  --orange-yellow-crayola: #ffdb70;
-  --vegas-gold: #ceb15a;
-  --light-gray: #d6d6d6;
-  --light-gray-70: #d6d6d6;
-  --bittersweet-shimmer: #b84c4c;
   --ff-poppins: 'Poppins', sans-serif;
+  --shadow-1: -4px 8px 24px #0e0e0e;
+  --shadow-2: 0 16px 30px #0e0e0e;
+  --shadow-3: 0 16px 40px #0e0e0e;
+  --shadow-4: 0 25px 50px #0e0e0e;
+  --shadow-5: 0 24px 80px #0e0e0e;
   --fs-1: 24px;
   --fs-2: 18px;
   --fs-3: 17px;
@@ -30,11 +17,6 @@
   --fw-400: 400;
   --fw-500: 500;
   --fw-600: 600;
-  --shadow-1: -4px 8px 24px #0e0e0e;
-  --shadow-2: 0 16px 30px #0e0e0e;
-  --shadow-3: 0 16px 40px #0e0e0e;
-  --shadow-4: 0 25px 50px #0e0e0e;
-  --shadow-5: 0 24px 80px #0e0e0e;
   --transition-1: 0.25s ease;
   --transition-2: 0.5s ease-in-out;
 }
@@ -58,6 +40,11 @@
   --light-gray: #d6d6d6;
   --light-gray-70: #d6d6d6;
   --bittersweet-shimmer: #b84c4c;
+  --shadow-1: -4px 8px 24px #0e0e0e;
+  --shadow-2: 0 16px 30px #0e0e0e;
+  --shadow-3: 0 16px 40px #0e0e0e;
+  --shadow-4: 0 25px 50px #0e0e0e;
+  --shadow-5: 0 24px 80px #0e0e0e;
 }
 
 
